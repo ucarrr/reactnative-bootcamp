@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork2</title>
+  </head>
+
+  <body>
+    <script>
+      function floatMultiplication() {
+        var floatMultiplicationValue = document.getElementById("floatMulti").value;
+        if (isNaN(floatMultiplicationValue)) {
+          window.alert("Nan Value");
+        } else {
+          floatMultiplicationValue = floatMultiplicationValue * 1.8;
+          window.alert(floatMultiplicationValue);
+        }
+      }
+
+
+      function calculater(calback){
+        var number1 = document.getElementById("number1").value;
+        var number2 = document.getElementById("number2").value;
+        var result = calback(Number(number1), Number(number2));
+        window.alert(result.toFixed(5));
+        
+      }
+
+      function sum(s1,s2){
+         return Number(s1) + Number(s2);;
+
+      }
+      function div(s1,s2){
+        return s1/s2;
+
+     }
+     function multi(s1,s2){
+        return s1*s2;
+
+     }
+     function sub(s1,s2){
+        return s1-s2;
+
+     }
+    </script>
+    <div style="margin-bottom: 300px;">
+      <div>
+        <label for="">Enter A Number and Multiplication 1.8</label>
+        <input type="text" id="floatMulti" placeholder="Enter A Number" />
+      </div>
+
+      <div>
+        <button onclick="floatMultiplication()">Multiplication 1.8</button>
+      </div>
+    </div>
+
+    <div>
+        <div style="margin: 20px;">
+            <label for="">Number 1</label>
+            <input type="text" id="number1" placeholder="Number 1" />
+            <label for="">Number 2</label>
+            <input type="text" id="number2" placeholder="Number 2" />
+        </div>
+        <div style="margin: 20px;">
+            <button onclick="calculater(sum)">Toplama</button>
+            <button onclick="calculater(sub)">Çıkarma</button>
+            <button onclick="calculater(div)">Bölme</button>
+            <button onclick="calculater(multi)">Çarpma</button>
+        </div>
+
+    </div>
+  </body>
+</html>
